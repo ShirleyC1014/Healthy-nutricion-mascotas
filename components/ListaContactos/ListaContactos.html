@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contactApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ListaContactos.css">
+    <title>Lista de recetas</title>
+</head>
+<body ng-controller="ListaContactosController">
+    <header class="header">
+        <img class="img__logo" src="../images/logo-healthy.png" >
+        <h1 class="header__title">Encuentra y busca recetas saludables para mascotas</h1>
+        <h3 class="header__subtitle">Hola {{user}}</h3>
+    </header>
+    <section class="cards">
+        <input type="text" class="form__input" placeholder="Realiza tu busqueda aquí" ng-model="buscarInput">
+        <div class="card" ng-repeat="receta in recetas | filter:buscarInput">
+            <span class="card__delete" ng-click="eliminar(receta.correo)"><i class="fas fa-trash"></i></span>
+            <p class="card__text"><strong>Nombre receta: </strong>{{receta.nombreReceta}}</p>
+            <p class="card__text"><strong>Receta para: </strong>{{receta.recetaPara}}</p> 
+            <p class="card__text"><strong>Ingredientes: </strong>{{receta.ingredientes}}</p> 
+            <p class="card__text"><strong>Procedimiento: </strong>{{receta.procedimiento}}</p>          
+            <p class="card__text"><strong>Correo: </strong>{{receta.correo}}</p>
+            <p class="card__text"><strong>Receta creada por: </strong>{{receta.nombre}}</p>
+        </div>         
+    </section>
+
+    <footer class="footer">
+        <a class="footer__button" ng-click="salir()"><i class="fas fa-share-square"></i> Salir</a>
+        <a href="../Crear/Crear.html" class="footer__button"><i class="fas fa-plus-circle"></i> Crear receta</a>
+    </footer>
+    
+    <!-- Librerias -->
+    <script src="https://kit.fontawesome.com/9941a83ba7.js" crossorigin="anonymous"></script>
+    <!-- Angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>    
+    <!-- Sweet Alert js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>   
+    
+    <!-- Controllers -->
+    <!-- App -->
+    <script src="../App.js"></script>
+    <!-- crearController -->
+    <script src="./ListaContactosController.js"></script>
+</body>
+</html>

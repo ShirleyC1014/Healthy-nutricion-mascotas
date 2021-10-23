@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Poppins', sans-serif;
+    position: relative;
+    height: 100vh;
+}
+/* Header */
+.header{
+    background:linear-gradient(30deg, #ECC980,#CE755F, #C35996, #677D95);
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+.header__title{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.header__subtitle{
+    font-size: 13px;
+    font-weight: 300;
+}
+.img__logo{
+    padding: 15px;
+    width: 50%;
+}
+/* Form */
+.form{
+    padding: 20px 20px;
+    margin: 20px;
+}
+.form__label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.form__input{
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFF3FA;
+}
+.form__button{
+    display: block;
+    margin: 30px 0;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #2bcbba;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* Cards */
+.cards{
+    padding: 20px 20px 40px;
+}
+.card{
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 11px 14px 40px -10px rgba(195, 89, 150, 0.75);
+    margin:20px 0;
+}
+.card__text{
+    font-size: 14px;
+    color: #595959;
+    font-weight: 300;
+    line-height: 12px;
+    margin: 10px 0;
+}
+.card__delete{
+    display: inline-block;
+    font-size: 20px;
+    color: #C35996;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+/* Footer */
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #CE6759;
+    color: #fff;
+    padding: 10px 10px; 
+    text-align: end;
+    display: flex;
+    justify-content: space-between;  
+}
+.footer__button{
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #CE755F;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .cards{
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+    }  
+    .img__logo{
+        padding: 15px;
+        width: 20%;
+    }
+}
